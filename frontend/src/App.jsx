@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import Students from "./pages/Students";
 import Courses from "./pages/Courses";
 import Attendance from "./pages/Attendance"
+import Reports from "./pages/Reports";
 
 function App() {
   return ( 
@@ -17,9 +18,10 @@ function App() {
         <Route path="/students" element={<Students />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/attendance" element={<Attendance />} />
+        <Route path="/reports" element={<Reports />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
-export default App;
+export default App

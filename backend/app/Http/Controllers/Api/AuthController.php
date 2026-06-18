@@ -12,13 +12,11 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
-        dd($request->all());
-
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'admin'
+            'role' => $request->role
         ]);
 
         return response()->json($user);
@@ -47,6 +45,15 @@ class AuthController extends Controller
 
         return response()->json([
             'message' => 'Logged out'
+        ]);
+    }
+
+    public function dashboard()
+    {
+        return response()->json([
+            'total_students' => \App\Models\Student::count(),
+            'total_courses' => \App\Models\Course::count(),
+            'total_attendance' => \App\Models\Attendance::count()
         ]);
     }
 }

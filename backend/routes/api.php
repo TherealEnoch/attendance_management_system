@@ -12,6 +12,8 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/reports/dashboard', [ReportController::class, 'dashboardStats']);
 Route::get('/reports/attendance/{studentId}', [ReportController::class, 'attendancePercentage']);
+Route::get('/attendance-analytics', [AttendanceController::class, 'analytics']);
+Route::get('/dashboard-stats', [AuthController::class, 'dashboard']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);

@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     protected $fillable = [
-        'full_name',
-        'matric_no',
+        'name',
         'email',
-        'department',
-        'level',
+        'matric_no'
     ];
+
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class);
+    }
 }

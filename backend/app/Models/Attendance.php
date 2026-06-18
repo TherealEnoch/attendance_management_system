@@ -12,4 +12,14 @@ class Attendance extends Model
         'status',
         'attendance_date'
     ];
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
 }

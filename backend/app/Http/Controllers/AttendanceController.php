@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\AttendanceController;
 use App\Models\Attendance;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class AttendanceController extends Controller {
@@ -23,6 +24,33 @@ class AttendanceController extends Controller {
 
         return response()->json($attendance, 201);
     }
+
+    public function analytics()
+{
+    $students = Student::with('attendances')->get();
+
+    $report = $students->map(function ($student) {
+
+        $total = $student->attendances->count();
+
+        $present = $student->attendances
+            ->where('status', 'present')
+            ->count();
+
+        $percentage = $total > 0
+            ? round(($present / $total) * 100, 2)
+            : 0;
+
+        return [
+            'student' => $student->full_name,
+            'present' => $present,
+            'total' => $total,
+            'percentage' => $percentage
+        ];
+    });
+
+    return response()->json($report);
+}
 
     public function show(Attendance $attendance)
     {
