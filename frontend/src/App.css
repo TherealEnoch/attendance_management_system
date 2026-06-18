@@ -11,27 +11,34 @@ body {
 
 .sidebar {
   width: 250px;
-  background: linear-gradient(180deg, #1f2937, #111827);
+  background: #b91c1c;
   color: white;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar h2 {
   margin-bottom: 30px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 15px;
 }
 
 .sidebar a {
   display: block;
   color: white;
   text-decoration: none;
-  padding: 12px;
+  padding: 12px 15px;
   margin-bottom: 12px;
   border-radius: 8px;
-  transition: background 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .sidebar a:hover {
-  background: #2563eb;
+  background: #991b1b;
+  transform: translate(5px);
+  transition: 0.3s ease;
 }
 
 .content {
@@ -56,9 +63,12 @@ body {
 .card {
   flex: 1;
   background: white;
-  padding: 25px;
+  padding: 30px;
+  min-height: 140px;
+  text-align: center;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border-left: 5px solid #b91c1c;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: transform 0.3s ease;
 }
 
@@ -74,7 +84,7 @@ body {
 .card p {
   font-size: 36px;
   font-weight: bold;
-  color: #2563eb;
+  color: #b91c1c;
 }
 
 .navigation {
@@ -85,7 +95,7 @@ body {
 
 .navigation a {
   text-decoration: none;
-  background: #2563eb;
+  background: #991b1b;
   color: white;
   padding: 12px 18px;
   border-radius: 8px;
@@ -97,4 +107,71 @@ body {
   border-radius: 12px;
   margin-top: 12px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+  background: #f9fafb;
+}
+
+.content h1 {
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.content p {
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background: #b91c1c;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tr:hover {
+  background: #f9fafb;
+}
+
+.page-container {
+  padding: 30px;
+}
+
+.form-container {
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.form-container input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.form-container button {
+  padding: 10px 15px;
+  background: #b91c1c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }

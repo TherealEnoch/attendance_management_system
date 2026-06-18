@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "../App.css";
 
 function Dashboard() {
   const [stats, setStats] = useState({
@@ -26,6 +27,7 @@ function Dashboard() {
       <div className="sidebar">
         <h2>Attendance System</h2>
 
+        <Link to="/dashboard">Dashboard</Link>
         <Link to="/students">Students</Link>
         <Link to="/courses">Courses</Link>
         <Link to="/attendance">Attendance</Link>

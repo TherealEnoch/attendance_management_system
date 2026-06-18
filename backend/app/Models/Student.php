@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     protected $fillable = [
-        'name',
+        'full_name',
+        'matric_no',
         'email',
-        'matric_no'
+        'department',
+        'level'
     ];
 
     public function attendances()
