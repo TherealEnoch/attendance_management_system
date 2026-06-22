@@ -26,6 +26,12 @@ function Login() {
         <div style={styles.container}>
             <form onSubmit={handleSubmit} style={styles.form}>
                 <h2 style={styles.title}>Attendance System Login</h2>
+                <p stlye={{
+                    textAlign: "center",
+                    color: "#6b7280",
+                    marginTop: "10px",
+                    marginBottom: "20px",
+                }}> Sign in to your account</p>
 
                 <input 
                 type="email"
@@ -55,21 +61,22 @@ const styles = {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        backgroung: "#f4f7fb",
+        background: "#f4f7fb",
     },
     form: {
         display: "flex",
-        fleDirection: "column",
+        flexDirection: "column",
         gap: "15px",
-        padding: "30px",
-        width: "350px",
-        borderRadius: "10px",
-        boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+        padding: "40px",
+        width: "400px",
+        borderRadius: "15px",
+        boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
     },
     title: {
         textAlign: "center",
-        marginBottom: "10px",
-        color: "#333",
+        marginBottom: "20px",
+        color: "#b91c1c",
+        fontSize: "28px",
     },
     input: {
         padding: "12px",
@@ -80,12 +87,13 @@ const styles = {
     },
     button: {
         padding: "12px",
-        backgroundColor: "#2563eb",
+        backgroundColor: "#b91c1c",
         color: "#fff",
         border: "none",
         borderRadius: "8px",
         cursor: "pointer",
         fontSize: "16px",
+        fontWeight: "bold",
     },
 };
 

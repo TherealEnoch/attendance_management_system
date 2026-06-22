@@ -16,8 +16,8 @@ class AttendanceController extends Controller {
     public function store(Request $request) 
     {
         $attendance = Attendance::create([
-            'student_id' => $request->student_id,
-            'course_id' => $request->course_id,
+            'student_name' => $request->student_name,
+            'course_code' => $request->course_code,
             'status' => $request->status,
             'attendance_date' => $request->attendance_date
         ]);
@@ -59,14 +59,14 @@ class AttendanceController extends Controller {
 
     public function update(Request $request, Attendance $attendance)
     {
-        $student->update($request->all());
+        $attendance->update($request->all());
 
         return response()->json($attendance);
     }
 
     public function destroy(Attendance $attendance)
     {
-        $student->delete();
+        $attendance->delete();
 
         return response()->json([
             'message' => 'Attendance deleted'
